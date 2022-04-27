@@ -2,7 +2,17 @@
 const headDropdown = document.getElementById('head-dropdown');
 const middleDropdown = document.getElementById('middle-dropdown');
 const bottomDropdown = document.getElementById('bottom-dropdown');
+
 const headEl = document.getElementById('head');
+console.log(headEl);
+
+
+
+headDropdown.addEventListener('change', () => {
+    console.log('changing select', headDropdown.value);
+   // headDiv.style.backgroundImage = `url('./assets/${headEl.value}.png')`;
+    headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
+});
 const middleEl = document.getElementById('middle');
 const bottomEl = document.getElementById('bottom');
 const reportEl = document.getElementById('report');

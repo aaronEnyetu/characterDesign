@@ -7,14 +7,16 @@ const headEl = document.getElementById('head');
 console.log(headEl);
 
 
-
-headDropdown.addEventListener('change', () => {
-    console.log('changing select', headDropdown.value);
-   // headDiv.style.backgroundImage = `url('./assets/${headEl.value}.png')`;
-    headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
-});
 const middleEl = document.getElementById('middle');
+console.log(middleEl);
+
+
 const bottomEl = document.getElementById('bottom');
+
+
+
+
+
 const reportEl = document.getElementById('report');
 const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
@@ -25,7 +27,12 @@ const catchphraseButton = document.getElementById('catchphrase-button');
 
 headDropdown.addEventListener('change', () => {
     // get the value of the head dropdown
+    headDropdown.addEventListener('change', () => {
+        console.log('changing select', headDropdown.value);
+        headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
+    });
 
+ 
     // increment the head change count state
     
     // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
@@ -36,7 +43,8 @@ headDropdown.addEventListener('change', () => {
 
 middleDropdown.addEventListener('change', () => {
     // get the value of the middle dropdown
-
+    console.log('changing-select', middleDropdown.value);
+    middleEl.style.backgroundImage = `url('./assets/${middleDropdown.value}-middle.png')`;
     // increment the middle change count state
     
     // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)

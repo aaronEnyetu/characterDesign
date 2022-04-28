@@ -16,12 +16,12 @@ const bottomEl = document.getElementById('bottom');
 
 
 const reportEl = document.getElementById('report');
-const catchphrasesEl = document.getElementById('catchphrases');
+//const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
 
-let catchphraseList = [''];
+let catchphrases = [];
 let headCount = 0;
 let middleCount = 0;
 let bottomCount = 0;
@@ -78,8 +78,8 @@ catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
     
     // push the new catchphrase to the catchphrase array in state
-    catchphraseList.push(catchphraseInput.value);
-    catchphraseInput.value = '';
+    catchphrases.push(catchphraseInput.value);
+    console.log(catchphrases);
     displayCatchphrases();
 
     // clear out the form input's value so it's empty to the user
@@ -93,19 +93,32 @@ function displayStats() {
     reportEl.textContent = `You have changed the head ${headCount} times, the body ${middleCount} times, and the pants ${bottomCount} times`;
 }
 
+
+
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
-    for (let catchphraseExit of catchphraseList) {
-        if (catchphraseList[catchphraseExit]) {
-            return catchphraseExit;
-        } catchphrasesEl.join().append(catchphraseExit);
+    
+    
+        
+
+
+
+    const catchphraseList = document.getElementById('catchphrase-list');
+
+    catchphraseList.textContent = '';
+    for (let phrase of catchphrases) {
+        const li = document.createElement('li');
+        li.textContent = phrase;
+    // and append that HTML element to the cleared-out DOM
+        catchphraseList.append(li);
+
     }
 
     // loop through each catchphrase in state
-   
+
     // and for each catchphrase
     
     // create an HTML element with the catchphrase as its text content
     
-    // and append that HTML element to the cleared-out DOM
+    
 }

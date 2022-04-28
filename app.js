@@ -12,15 +12,17 @@ console.log(middleEl);
 
 
 const bottomEl = document.getElementById('bottom');
-
-
-
+console.log('bottom');
 
 
 const reportEl = document.getElementById('report');
 const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
+
+
+let catchphraseList = [''];
+
 
 // set state for how many times the user changes the head, middle, and bottom
 // set state for all of the character's catchphrases
@@ -55,6 +57,8 @@ middleDropdown.addEventListener('change', () => {
 
 bottomDropdown.addEventListener('change', () => {
     // get the value of the bottom dropdown
+    console.log('changing-select', bottomDropdown.value);
+    bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
 
     // increment the bottom change count state
     
@@ -67,6 +71,9 @@ catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
     
     // push the new catchphrase to the catchphrase array in state
+    catchphraseList.push(catchphraseInput.value);
+    catchphraseInput.value = '';
+    displayCatchphrases();
 
     // clear out the form input's value so it's empty to the user
    
@@ -80,6 +87,11 @@ function displayStats() {
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
+    for (let catchphraseExit of catchphraseList) {
+        if (catchphraseList[catchphraseExit]) {
+            return catchphraseExit;
+        } catchphrasesEl.join().append(catchphraseExit);
+    }
 
     // loop through each catchphrase in state
    

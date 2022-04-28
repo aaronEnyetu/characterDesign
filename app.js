@@ -4,15 +4,15 @@ const middleDropdown = document.getElementById('middle-dropdown');
 const bottomDropdown = document.getElementById('bottom-dropdown');
 
 const headEl = document.getElementById('head');
-console.log(headEl);
+
 
 
 const middleEl = document.getElementById('middle');
-console.log(middleEl);
+
 
 
 const bottomEl = document.getElementById('bottom');
-console.log('bottom');
+
 
 
 const reportEl = document.getElementById('report');
@@ -32,7 +32,7 @@ let bottomCount = 0;
 
     // get the value of the head dropdown
 headDropdown.addEventListener('change', () => {
-    console.log('changing select', headDropdown.value);
+
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
       // increment the head change count state
     headCount++;
@@ -49,7 +49,7 @@ headDropdown.addEventListener('change', () => {
 
 middleDropdown.addEventListener('change', () => {
     // get the value of the middle dropdown
-    console.log('changing-select', middleDropdown.value);
+    
     middleEl.style.backgroundImage = `url('./assets/${middleDropdown.value}-middle.png')`;
     // increment the middle change count state
     middleCount++;
@@ -63,7 +63,7 @@ middleDropdown.addEventListener('change', () => {
 
 bottomDropdown.addEventListener('change', () => {
     // get the value of the bottom dropdown
-    console.log('changing-select', bottomDropdown.value);
+    
     bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
 
     // increment the bottom change count state
